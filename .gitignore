@@ -1,1 +1,4 @@
 *.~*
+/SuplaSym.identcache
+/SuplaSym.dsk
+/SuplaSym.stat
