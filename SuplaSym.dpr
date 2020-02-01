@@ -17,7 +17,8 @@ uses
   ElektrMeterFrameUnit in 'Frames\ElektrMeterFrameUnit.pas' {ElektrMeterFrame: TFrame},
   ImpulsCounterFrameUnit in 'Frames\ImpulsCounterFrameUnit.pas' {ImpulsCounterFrame: TFrame},
   ThermostatHeatpolFrameUnit in 'Frames\ThermostatHeatpolFrameUnit.pas' {ThermostatHeatpolFrame: TFrame},
-  ThermostatFrameUnit in 'Frames\ThermostatFrameUnit.pas' {ThermostatFrame: TFrame};
+  ThermostatFrameUnit in 'Frames\ThermostatFrameUnit.pas' {ThermostatFrame: TFrame},
+  NoImplementedFrameUnit in 'Frames\NoImplementedFrameUnit.pas' {NoImplementedFrame: TFrame};
 
 {$R *.res}
 

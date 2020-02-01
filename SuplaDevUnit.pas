@@ -135,7 +135,8 @@ uses
   ElektrMeterFrameUnit,
   ImpulsCounterFrameUnit,
   ThermostatHeatpolFrameUnit,
-  ThermostatFrameUnit;
+  ThermostatFrameUnit,
+  NoImplementedFrameUnit;
 {$R *.dfm}
 
 function TFrameList.FGetItem(Index: integer): TPanelInfo;
@@ -360,6 +361,7 @@ end;
 
 function TSuplaDevForm.CreateChannelFrame(FrameOwner: TPanel; ChannelType: integer): TBaseFrame;
 begin
+  Result := nil;
   case ChannelType of
     SUPLA_CHANNELTYPE_RELAY:
       Result := TRelayFrame.Create(FrameOwner);
@@ -404,13 +406,16 @@ begin
       end;
     SUPLA_CHANNELTYPE_THERMOSTAT_HEATPOL_HOMEPLUS:
       begin
-        Result := TThermostatHeatpolFrame.Create(FrameOwner);
+        if ProgCfg.SpecUser then
+          Result := TThermostatHeatpolFrame.Create(FrameOwner);
       end;
 
   else
-    Result := TBaseFrame.Create(FrameOwner);
+    Result := TNoImplementedFrame.Create(FrameOwner);
   end;
 
+  if Result=nil then
+    Result := TNoImplementedFrame.Create(FrameOwner);
 end;
 
 procedure TSuplaDevForm.AddChannelFrame(chNr: integer; chCfg: TChannelCfg);

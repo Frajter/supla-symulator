@@ -142,6 +142,7 @@ type
     DevCfgList: TSuplaDevCfgList;
     W_Top, W_Left, W_Width, W_Height: integer;
     W_WinState: TWindowState;
+    SpecUser : boolean;
     constructor Create;
     destructor Destroy; override;
     procedure SaveToReg;
@@ -1021,6 +1022,7 @@ begin
       end;
       reg.ReadEx('ServerName', ServerName);
       reg.ReadEx('Email', Email);
+      reg.ReadEx('SpecUser',SpecUser);
       DevCfgList.LoadFromReg(reg);
     end;
   finally
