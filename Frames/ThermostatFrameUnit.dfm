@@ -1,0 +1,2 @@
+inherited ThermostatFrame: TThermostatFrame
+end
